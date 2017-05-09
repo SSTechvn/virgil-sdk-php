@@ -49,7 +49,7 @@ class SignedResponseModelMapper extends AbstractJsonModelMapper
         );
 
         return new SignedResponseModel(
-            $data[JsonProperties::ID_ATTRIBUTE_NAME],
+            isset($data[JsonProperties::ID_ATTRIBUTE_NAME]) ? $data[JsonProperties::ID_ATTRIBUTE_NAME] : '',
             $data[JsonProperties::CONTENT_SNAPSHOT_ATTRIBUTE_NAME],
             $cardContentModel,
             $cardMetaModel
